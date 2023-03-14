@@ -10,8 +10,17 @@ import PaddingLabel
 import Cosmos
 import SnapKit
 
+protocol SelecetProductDelegate: AnyObject {
+    func addNewDrink(_ drink: Drink)
+    func removeLastDrink(_ drink: Drink)
+}
+
 class DrinkInfoViewController: UIViewController {
     public lazy var viewModel = { DrinkInfoViewModel() }()
+    
+    var cocktail: Drink?
+    
+    weak var delegate: SelecetProductDelegate?
     
     var isLiked = false
     
@@ -63,13 +72,25 @@ class DrinkInfoViewController: UIViewController {
     }
     
     @IBAction func likeDrinkButton(_ sender: UIButton) {
-       
-        isLiked = !isLiked
-        let imageName = isLiked ? "heart.fill" : "heart"
-                likeDrinkButton.setImage(UIImage(systemName: imageName), for: .normal)
         
+        if isLiked == false {
+            //            favouriteDrinks.append(Drinks)
+            //            saveRatingToDB()
+            
+            likeDrinkButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+            
+            print("I added to favourite array")
+            delegate?.addNewDrink(viewModel.drink)
+            isLiked = true
+        } else {
+            likeDrinkButton.setImage(UIImage(systemName: "heart"), for: .normal)
+            print("I removed from favourite array")
+            delegate?.removeLastDrink(viewModel.drink)
+            isLiked = false
         }
-        
+    }
+    
+    
     
     
     
@@ -92,8 +113,6 @@ class DrinkInfoViewController: UIViewController {
         super.viewDidLoad()
         updateUI()
         initViewModel()
-        let imageName = isLiked ? "heart.fill" : "heart"
-                likeDrinkButton.setImage(UIImage(systemName: imageName), for: .normal)
     }
 }
 

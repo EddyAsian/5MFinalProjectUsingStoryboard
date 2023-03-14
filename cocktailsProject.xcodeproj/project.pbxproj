@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		785DDDF029BE94BE002BB31D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 785DDDEF29BE94BE002BB31D /* GoogleService-Info.plist */; };
 		8C4A108129A41D2D0008E663 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4A108029A41D2D0008E663 /* AppDelegate.swift */; };
 		8C4A108329A41D2D0008E663 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4A108229A41D2D0008E663 /* SceneDelegate.swift */; };
 		8C4A108529A41D2D0008E663 /* DrinksMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4A108429A41D2D0008E663 /* DrinksMenuViewController.swift */; };
@@ -43,7 +42,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		785DDDEF29BE94BE002BB31D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		78EFDDC529C104C300876D9C /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8C4A107D29A41D2D0008E663 /* cocktailsProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cocktailsProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C4A108029A41D2D0008E663 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8C4A108229A41D2D0008E663 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +110,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		78EFDDC429C104B600876D9C /* GoogleService */ = {
+			isa = PBXGroup;
+			children = (
+				78EFDDC529C104C300876D9C /* GoogleService-Info.plist */,
+			);
+			path = GoogleService;
+			sourceTree = "<group>";
+		};
 		8C4A107429A41D2D0008E663 = {
 			isa = PBXGroup;
 			children = (
@@ -132,7 +139,6 @@
 		8C4A107F29A41D2D0008E663 /* cocktailsProject */ = {
 			isa = PBXGroup;
 			children = (
-				785DDDEF29BE94BE002BB31D /* GoogleService-Info.plist */,
 				8C4A109429A41D3A0008E663 /* Application */,
 				8C872C5229AAED2E0030EC8D /* Common */,
 				8C4A109529A41F380008E663 /* Extensions */,
@@ -195,7 +201,6 @@
 		8C4A10A229A421DA0008E663 /* DrinkInfo */ = {
 			isa = PBXGroup;
 			children = (
-				8C4A10F829A5B1F50008E663 /* Components */,
 				8C4A10F929A5B1FF0008E663 /* View */,
 				8C4A10FA29A5B2020008E663 /* ViewModel */,
 			);
@@ -232,6 +237,7 @@
 		8C4A10AF29A429B30008E663 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				78EFDDC429C104B600876D9C /* GoogleService */,
 				8C872C5B29AB0AA30030EC8D /* DatabaseManager */,
 				8C68357829A7F00D002D60A7 /* AuthManager */,
 				8C872C4F29AAE66B0030EC8D /* KeychainManager */,
@@ -256,13 +262,6 @@
 				8C4A10B629A42A0D0008E663 /* Drinks.swift */,
 			);
 			path = DTOs;
-			sourceTree = "<group>";
-		};
-		8C4A10F829A5B1F50008E663 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Components;
 			sourceTree = "<group>";
 		};
 		8C4A10F929A5B1FF0008E663 /* View */ = {
@@ -519,7 +518,6 @@
 			files = (
 				8C4A108D29A41D300008E663 /* LaunchScreen.storyboard in Resources */,
 				8C4A108A29A41D300008E663 /* Assets.xcassets in Resources */,
-				785DDDF029BE94BE002BB31D /* GoogleService-Info.plist in Resources */,
 				8C4A10A929A422140008E663 /* DrinkCell.xib in Resources */,
 				8C4A108829A41D2D0008E663 /* Main.storyboard in Resources */,
 			);

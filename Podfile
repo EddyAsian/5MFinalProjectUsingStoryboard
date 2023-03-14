@@ -8,6 +8,8 @@ target 'cocktailsProject' do
 pod 'FirebaseAnalytics'
 pod 'FirebaseAuth'
 pod 'FirebaseFirestore'
+pod 'RxSwift'
+pod 'RxCocoa'
 pod 'FirebaseAuth'
 pod 'SnapKit'
 pod 'Cosmos', '~> 23.0'

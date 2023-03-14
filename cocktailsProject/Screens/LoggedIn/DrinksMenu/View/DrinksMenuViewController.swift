@@ -6,9 +6,12 @@
 //
 
 import UIKit
+import RxSwift
 
 class DrinksMenuViewController: UIViewController {
     private lazy var viewModel = { DrinksMenuViewModel() }()
+    
+    private var basketArray: [Drink] = []
     
     private func initViewModel() {
         viewModel.getDrinksWithLetter()
@@ -108,6 +111,7 @@ extension DrinksMenuViewController: UICollectionViewDelegateFlowLayout {
             .instantiateViewController(
                 withIdentifier: DrinkInfoViewController.identifier
             ) as? DrinkInfoViewController else { fatalError("no xib found") }
+        vc.delegate = self
         vc.viewModel.drink = viewModel.filteredDrinks[indexPath.row]
         navigationController?.pushViewController(vc, animated: true)
     }
@@ -124,6 +128,7 @@ extension DrinksMenuViewController: UICollectionViewDataSource {
         _ collectionView: UICollectionView,
         cellForItemAt indexPath: IndexPath
     ) -> UICollectionViewCell {
+       
         guard let cell = drinksCollectionView.dequeueReusableCell(
             withReuseIdentifier: DrinkCell.identifier,
             for: indexPath
@@ -142,3 +147,14 @@ extension DrinksMenuViewController: UISearchBarDelegate {
     ) { viewModel.getDrinksWithName(searchText) }
 }
 
+extension DrinksMenuViewController: SelecetProductDelegate {
+    func addNewDrink(_ drink: Drink) {
+        basketArray.append(drink)
+        print("Added throw delegate and now there are \(basketArray.count) elements in array: \(basketArray)")
+    }
+    
+    func removeLastDrink(_ drink: Drink) {
+        basketArray.removeLast()
+        print("Removed throw delegate and now there are \(basketArray.count) elements in array: \(basketArray)")
+    }
+}

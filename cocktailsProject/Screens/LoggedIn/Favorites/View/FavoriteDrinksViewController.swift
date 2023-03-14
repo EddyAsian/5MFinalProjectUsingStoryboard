@@ -10,6 +10,8 @@ import UIKit
 class FavoriteDrinksViewController: UIViewController {
     @IBOutlet weak var favoriteDrinksTableView: UITableView!
     
+    weak var delegate: SelecetProductDelegate?
+    
     private func configureFavoriteDrinksTableView() {
         favoriteDrinksTableView.dataSource = self
         favoriteDrinksTableView.delegate = self
@@ -20,7 +22,10 @@ class FavoriteDrinksViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureFavoriteDrinksTableView()
+        
     }
+    
+   
 }
 
 // MARK: UITableViewDataSource
@@ -45,3 +50,6 @@ extension FavoriteDrinksViewController: UITableViewDataSource {
 extension FavoriteDrinksViewController: UITableViewDelegate {
     
 }
+
+
+
